@@ -1,45 +1,17 @@
 K Means Clustering From Scratch Using NumPy
 
-Project Description
-This project implements and evaluates the K Means clustering algorithm from scratch using NumPy. The complete algorithm was executed on a synthetic dataset and validated by comparing the results with the standard scikit learn KMeans implementation.
+Project Overview
+This repository contains an academic project focused on implementing and evaluating the K Means clustering algorithm from scratch using NumPy. The project includes a complete Python implementation, visualization outputs, and a separate detailed text based analysis report.
 
-Input Data Characteristics
-1 Total number of samples 500
-2 Number of features 2
-3 Data type Synthetic numerical data
-4 Data generation method numpy random multivariate normal
-5 Number of clusters used during data generation 4
-6 Clusters are overlapping and not perfectly separable
+Project Files
+1 kmeans_from_scratch.ipynb
+This file contains the complete Python code implementation of the K Means algorithm from scratch. It includes synthetic data generation, K optimization using Elbow Method and Silhouette Score, final clustering visualization, and comparison with scikit learn KMeans.
 
-Completed Technical Tasks
-1 Generated a synthetic dataset of 500 samples
-2 Implemented K Means clustering from scratch using NumPy
-3 Determined the optimal number of clusters using Elbow Method and Silhouette Score
-4 Visualized clustering results using two dimensional scatter plots
-5 Compared scratch implementation results with scikit learn KMeans
+2 report.txt
+This file contains the detailed text based project report. It includes input data characteristics, explanation of the scratch algorithm, interpretation of WCSS and Silhouette analysis, discussion of visualization results, comparison with scikit learn, and final conclusions.
 
-Algorithm Execution
-The K Means algorithm was initialized with random centroids. Euclidean distance was used to assign data points to the nearest centroid. Centroids were updated iteratively until convergence. Within Cluster Sum of Squares was calculated after convergence.
+Execution Instructions
+Open the notebook file in Jupyter Notebook or Google Colab and run all cells to reproduce the results and visualizations described in the report.
 
-K Optimization Analysis
-K values evaluated ranged from 2 to 10
-Elbow Method showed a clear reduction in WCSS improvement beyond K equal to 4
-Silhouette Score reached its maximum at K equal to 4
-The final selected optimal K value was 4
-
-Final Quantitative Results
-Scratch K Means WCSS 1123.78
-Scikit learn KMeans WCSS 1123.78
-Scratch Silhouette Score 0.719
-Scikit learn Silhouette Score 0.719
-
-Result Interpretation
-The optimal K value of 4 correctly identifies the underlying cluster structure of the dataset. The scratch implementation produces identical WCSS and silhouette scores when compared with scikit learn KMeans. This confirms the correctness and accuracy of the scratch implementation.
-
-Visualization Summary
-Elbow curve demonstrates diminishing improvement in WCSS beyond K equal to 4
-Silhouette plot confirms maximum cluster separation at K equal to 4
-Final scatter plot shows four distinct overlapping clusters with clearly defined centroids
-
-Execution Confirmation
-All results plots and metrics were produced by executing the full Python implementation in a single Jupyter Notebook cell.
+Purpose
+This project is developed strictly for educational and academic evaluation purposes.
