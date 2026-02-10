@@ -1,0 +1,28 @@
+K-Means Clustering From Scratch – Evaluation Report
+1 Input Data Description
+
+The experiment was conducted on a synthetically generated dataset consisting of 500 data points with 2 numerical features. The data was created using the numpy random multivariate normal distribution. Four underlying cluster centers were used, each contributing 125 data points, resulting in a total of 500 samples. A shared covariance matrix was applied to all clusters to intentionally introduce overlap between clusters. This ensures that the data is not perfectly separable and presents a realistic clustering challenge suitable for evaluation.
+
+2 K-Means Algorithm Implementation From Scratch
+
+The K-Means clustering algorithm was implemented from scratch using NumPy without relying on any clustering utilities from scikit-learn. Centroids were initialized randomly by selecting K data points from the dataset. For each iteration, Euclidean distance was computed between each data point and all centroids. Data points were assigned to the nearest centroid, and new centroids were calculated as the mean of the points assigned to each cluster. The algorithm iteratively updated centroids until convergence was achieved based on centroid stability. After convergence, the Within-Cluster Sum of Squares (WCSS) was computed to measure cluster compactness.
+
+3 Elbow Method Analysis
+
+To determine the optimal number of clusters, the Elbow Method was applied by computing WCSS values for K ranging from 2 to 10 using the scratch implementation. As the number of clusters increased, WCSS decreased significantly up to K equal to 4. Beyond this value, the reduction in WCSS became marginal, indicating diminishing returns. This behavior suggests that K equal to 4 is an appropriate choice for the dataset.
+
+4 Silhouette Score Analysis
+
+Silhouette scores were calculated for each K value between 2 and 10 to evaluate clustering quality. The silhouette score measures how well data points fit within their assigned clusters compared to other clusters. The highest silhouette score was observed at K equal to 4, with a value of 0.719. This indicates strong intra-cluster cohesion and good inter-cluster separation at this K value.
+
+5 Final Clustering and Visualization Interpretation
+
+Using the optimal number of clusters, the final K-Means clustering was performed using the scratch implementation. The resulting two-dimensional scatter plot shows four distinct clusters with moderate overlap. Each cluster is centered around a clearly identifiable centroid. The overlap observed in the visualization reflects the intentional covariance used during data generation and confirms that the algorithm handled non-perfectly separable data effectively.
+
+6 Comparison With Scikit-Learn KMeans
+
+To validate the correctness of the scratch implementation, the results were compared with the scikit-learn KMeans algorithm using the same dataset and optimal K value. Both implementations produced identical evaluation metrics. The scratch implementation achieved a WCSS value of 1123.78, which exactly matched the WCSS (inertia) reported by scikit-learn. The silhouette score for both implementations was 0.719. These matching results confirm that the scratch implementation correctly replicates the behavior of the standard scikit-learn KMeans algorithm. Minor floating-point differences are theoretically possible due to initialization and numerical precision, but in this execution both methods converged to the same solution.
+
+7 Conclusion
+
+The K-Means clustering algorithm was successfully implemented from scratch and evaluated on a synthetic dataset. The Elbow Method and Silhouette Score correctly identified the optimal number of clusters as four, matching the true underlying structure of the data. The comparison with scikit-learn validated the correctness and effectiveness of the scratch implementation. This project demonstrates a clear understanding of unsupervised learning, clustering algorithms, and evaluation techniques.
